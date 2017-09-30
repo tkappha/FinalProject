@@ -1,0 +1,36 @@
+<% include partials/header %>
+<!-- ************************************ -->
+
+
+	<div class="container">
+		<header class="jumbotron">
+			<div class="container">
+				<h1>Welcome to Code Camp Review</h1>
+				<p>The best website for reviewing coding bootcamps!</p>
+				<p>
+					<a class="btn btn-primary btn-lg" href="/codecamps/new">Add New Code Camp</a>
+				</p>
+			</div>
+		</header>
+		
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+			<% codecamps.forEach(function(codecamp){ %>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnail">
+						<img src="<%= codecamp.image %>">
+						<div class="caption">
+							<h4><%= codecamp.name %></h4>
+						</div>
+							<p>
+								<a href="/codecamps/<%= codecamp._id %>" class="btn btn-primary">More Info</a>
+							</p>
+					</div>
+				</div> 
+			<% }); %>
+
+		</div><!-- closes row -->
+	</div> <!-- closes container -->
+
+
+<!-- ****************************************** -->
+<% include partials/footer %>
